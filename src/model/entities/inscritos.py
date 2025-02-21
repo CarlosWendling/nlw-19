@@ -1,5 +1,5 @@
 from src.model.configs.base import Base
-from sqlalchemy import Column, String, Integer, ForeingKey #type: ignore
+from sqlalchemy import Column, String, Integer, ForeignKey #type: ignore
 
 class Inscritos (Base):
     __tablename__ = "Inscritos"
@@ -8,4 +8,4 @@ class Inscritos (Base):
     nome = Column(String, nullable=False)
     email = Column(String, nullable=False)
     link = Column(String)
-    evento_id = Column(Integer, ForeingKey("Eventos.py"))
+    evento_id = Column(Integer, ForeignKey("Eventos.id"))
