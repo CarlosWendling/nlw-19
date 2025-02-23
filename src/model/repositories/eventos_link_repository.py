@@ -31,7 +31,7 @@ class EventosLinkRepository(EventosLinkRepositoryInterface):
             data = (
                 db.session
                 .query(EventosLink)
-                .filter(EventosLink.evento_id == event_id.
+                .filter(EventosLink.evento_id == event_id,
                         EventosLink.inscrito_id == subscriber_id)
                 .one_or_none()
             )
