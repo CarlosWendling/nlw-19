@@ -4,9 +4,9 @@ import pytest # type: ignore
 @pytest.mark.skip("Insert in DB")
 def test_insert():
     subscriber_info = {
-        "name": "Matheus",
-        "email": "matheus@gmail.com",
-        "evento_id": 1,
+        "name": "Teste",
+        "email": "test@gmail.com",
+        "evento_id": 3,
     }
 
     subs_repo = SubscribersRepository()
@@ -20,3 +20,13 @@ def test_select():
     subs_repo = SubscribersRepository()
     resp = subs_repo.select(email, evento_id)
     print(resp.nome)
+
+@pytest.mark.skip("Select in DB")
+def test_ranking():
+    subs_repo = SubscribersRepository()
+
+    event_id = 3
+    resp = subs_repo.get_ranking(event_id)
+
+    for elem in resp:
+        print(f'Link: {elem.link}, Total de inscritos: {elem.total}')
