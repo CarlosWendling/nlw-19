@@ -15,7 +15,7 @@ class EventosRepository(EventosRepositoryInterface):
                 db.session.rollback()
                 raise exception
     
-    def select(self, event_name: str) ->None:
+    def select(self, event_name: str) -> Eventos:
         with DBConnectionHandler() as db:
             data = (
                 db.session
